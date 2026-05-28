@@ -26,8 +26,8 @@ character = {
         'death' : False,
         'over_weight' : True,
         },
-    
-    'atribute_base': {
+
+    'attribute_base': {
         'hp' : base_value,
         'mana' : base_value,
         'stamina' : base_value,
@@ -39,12 +39,12 @@ character = {
         'dmg_base' : base_value,
         'slot_magic' : 3,
     },
-    
+
     'inventory' : {
         'itens':[],
         'bag_coin' : 0,
     },
-    
+
     'equipment' : {
         'head' : [],
         'chest' : [],
@@ -54,12 +54,12 @@ character = {
         'leg' : [],
         'foot' : [],
     },
-    
-    'Weapon' : {
-        'L_hand':None,
-        'R_hand':None,
+
+    'weapon' : {
+        'l_hand':None,
+        'r_hand':None,
     },
-    
+
     'final_status':{
         'total_hp' : 0,
         'total_mana' : 0,
@@ -73,7 +73,7 @@ character = {
         'total_slot_magic' : 0,
         'type_dmg' : []
     },
-    
+
      'current_status':{
         'total_hp' : 0,
         'total_mana' : 0,
@@ -87,7 +87,7 @@ character = {
         'total_slot_magic' : 0,
         'type_dmg' : []
     },
-    
+
 }
 
 # Race of Character
@@ -99,48 +99,48 @@ race = {
         'slot_magic' : 1,
         'magic_resist' : 2,
         },
-    
+
     'dark-elf' : {
         'mana_mult' : 1.3,
         'debuff' : 1,
         'slot_magic' : 1,
         'magic_resist' : 2,
         },
-    
+
     'orc' : {
         'for' : 3,
         'hp' : 1.5,
         'res' : 3,
         'bledding_resistance' : 3,
         },
-    
+
     'human' : {
         'exp_bonus_mult' : 1.15, 
         'sort' : 3, 
         },
-    
+
     'dragonborn' : {
         'def_mult' : 1.15, 
         'for_mult' : 1.15, 
         'fire_resistance' : 4,
         },
-    
+
     'undead' : {
-        
+
         # Unical effects
         'poison_effect' : 'convert in hp',
-        'poison_Negate' : True,
-        'hp_Regen' : 2, # Per turn
-        
+        'poison_negate' : True,
+        'hp_regen' : 2, # Per turn
+
         # Debuffs
         'cure' : 'dmg',
         'fire_dmg_mult' : 2, 
         'agi' : -2,
         'for' : -1,
         },
-    
+
     # Enemy only
-    
+
     'dragon' : {
         #Elemental type
         'type' : ['fire', 'ice', 'blood', 'thunder', 'poison', 'curse'],
@@ -151,35 +151,31 @@ race = {
         'thunder_immunity' : False,
         'poison_immunity' : False,
         'curse_immunity' : False,
-        
         },
-    
-    
-    
+
     'thiefling' :{
-        
+
         # Buff
         'fire_resistance' : 2,
         'charisma_mult' : 2,
         'stealth_bonus' : 2,
-        
+
         # Debuff
         'holy_dmg_mult' : 1.5 
         },
-    
+
     'dwarf' : {
         'res' : 4,                 
         'hp_mult' : 1.2,
         'poison_resistance' : 5,   
         'stun_resist' : 1,         
         },
-    
 }
 
 # Class of Character
 
 class_char = {
-    
+
     'paladin' : {
         'unique_skills' : {
             'holy_smite': 'convert damage physical in Holy',
@@ -192,7 +188,7 @@ class_char = {
             'heal_efficiency': 1.15 
          }
     }, #Affinity with sword, hammer and holy damage
-    
+
     'druid' : {
         'unique_skills' : {
             'wolf_transformation': {'atk_speed': 1.5, 'dodge': 0.2},
@@ -203,10 +199,9 @@ class_char = {
         'class_bonus' : {
             'mana_Regen': 0.1,
             'nature_affinity': 1.1 
-
         }
     },  # Hability to transform in animals
-    
+
     'mage' : {
         'unique_skills' : {
             'mana_Burn': 'damage based in mana of oponnent',
@@ -217,13 +212,12 @@ class_char = {
             'slot_magic': 5,
             'mana_multi': 1.3,
             'magical_penetration': 0.15
-
         }
     }, # High Damage Magic and low hp 
-    
+
     'barbarian' : {
         'unique_skills' : {
-           'enrage': 'incrase physical damage but decrease defense',
+            'enrage': 'incrase physical damage but decrease defense',
             'leap_slam': 'area physical damage'
         },
 
@@ -231,10 +225,9 @@ class_char = {
             'hp_flat': 50,       # Bônus fixo de vida
             'physical_multi': 1.25,
             'resistance_stun': 0.3
-
         }
     }, # High Damage Physical and Medium resistance
-    
+
     'necromancer' : {
         'unique_skills' : {
             'raise_undead': 'summon skeleton based on int',
@@ -242,17 +235,16 @@ class_char = {
         },
 
         'class_bonus' : {
-           'curse_duration': 2, # Efeitos duram mais turnos
+            'curse_duration': 2, # Efeitos duram mais turnos
             'resist_cursed': 0.4,
             'minion_damage': 1.2
-
         }
     },
      # Hability to summoner a pawn (undead), based in char atribute
-    
+
     'monk' : {
         'unique_skills' : {
-           'seven_sided_strike': 'multiple Fast Attacks',
+            'seven_sided_strike': 'multiple fast attacks',
             'meditate': 'rechafully hp and stamina'
         },
 
@@ -260,24 +252,21 @@ class_char = {
             'unarmed_multi': 1.5, # Bônus alto para luta sem armas
             'evasion': 0.25,      # Chance de desviar de ataques
             'attack_speed': 1.3
-
         }
     },
      # High base Damage(Disarm or glooves equip) and medium resistance
-    
+
     'archer' : {
         'unique_skills' : {
             'rain_of_arrows': 'area physical damage',
-            '   eagle_eye': 'incrase precision and crit'
+            'eagle_eye': 'incrase precision and crit'
         },
 
         'class_bonus' : {
-            'crit_Chance': 0.2,
-            'crit_Damage': 1.5,
-            'range_Bonus': 10
-
+            'crit_chance': 0.2,
+            'crit_samage': 1.5,
+            'range_bonus': 10
         }
     },
      # High Chanc of critical Damage and agi , possibility to aplly effects in arrows, but low hp and res
-     
 }

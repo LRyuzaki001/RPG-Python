@@ -19,6 +19,29 @@ from weapons.weapon import weapon
 from effects.effects import debuffs,buffs
 from potion.potion import potion,throw_potion
 
-print(weapon['dagger'])
-print(character['status'])
+# Select the initial attributes'
+
+print('Welcome to the character creation.')
+character_name = str(input('Write your character name: '))
+character_class = str(input('Write your character class: '))
+character_race = str(input('Select your character race: '))
+
+# Putting the character characteristics in a dictionary
+
+character['name'] = character_name
+character['class'] = character_class
+character['race'] = character_race
+
+# 1-st Scaling of character, race, and class selected.
+
+base_character = {
+    'character' : character}
+
+# multiplier atribute base
+
+multiplier_mana = character['attribute_base']['mana'] * race ['elf']['mana_mult']
+
+print (multiplier_mana)
+
+# 2-nd Scaling based in total of 1-st scaling and equipment, magic, weapons, buffs and debuffs.
 
